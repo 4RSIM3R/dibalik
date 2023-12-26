@@ -29,7 +29,6 @@ async function handleRequest(request: Request) {
 	const url = new URL(request.url);
 	const target = url.searchParams.get("url");
 
-	console.log(url);
 
 	if (target == null) { return Teapot(); }
 
