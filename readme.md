@@ -2,6 +2,15 @@
 
 Tired of <b>CORS</b> roadblocks? Say hello to 'dibalik', a simple yet powerful CORS proxy designed to make your cross-origin data fetching a breeze. Built for Cloudflare Workers, it's lightweight, performant, and secure by default.
 
+
+## Installation
+
+`npx wrangler deploy`
+
+
+## Usage
+`curl https://dibalik.<YOURS>.workers.dev/url?=https://google.com`
+
 Here's why you'll love 'dibalik':
 
 - Effortless CORS Handling: Say goodbye to manual CORS configurations and preflight request headaches. 'dibalik' takes care of it all, letting you focus on your core application logic.
