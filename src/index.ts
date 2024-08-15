@@ -4,7 +4,7 @@ export interface Environment {
 
 const corsHeaders = {
 	"Access-Control-Allow-Origin": "*",
-	"Access-Control-Allow-Methods": "GET,HEAD,POST,OPTIONS",
+	"Access-Control-Allow-Methods": "*",
 	"Access-Control-Max-Age": "86400",
 };
 function handleOptions(request: Request) {
@@ -20,7 +20,7 @@ function handleOptions(request: Request) {
 		};
 		return new Response(null, { headers: respHeaders });
 	} else {
-		return new Response(null, { headers: { Allow: "GET, HEAD, POST, OPTIONS" } });
+		return new Response(null, { headers: { Allow: "*" } });
 	}
 }
 
@@ -38,7 +38,7 @@ async function handleRequest(request: Request) {
 	let response = await fetch(request);
 	response = new Response(response.body, response);
 	response.headers.set("Access-Control-Allow-Origin", origin);
-	response.headers.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+	response.headers.set("Access-Control-Allow-Methods", "*");
 	response.headers.append("Vary", "Origin");
 
 	return response;
